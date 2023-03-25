@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>weather</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">WeatherApp</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About this App</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Delhi</a></li>
+                  <li><a class="dropdown-item" href="#">Bangalore</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Seattle</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Usage guide</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input id="city" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      
+      <h1 class="my-4 text-center">Weather For <span id="cityName"></span></h1>
+      <div>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm border-danger">
+                <div class="card-header py-3 text-bg-danger border-danger">
+                  <i class="fa-solid fa-temperature-half"></i>
+                  <h4 class="my-0 fw-normal">Temperatures</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title"><span id="temp"></span><small class="text-muted fw-light">&#8451;</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li class="my-4 text-center"><b>Temperature</b></li>
+                    <li>Min Temperature is :<span id="min_temp"></span></li>
+                    <li>Max Temperature is :<span id="max_temp"></span></li>
+           
+                    
+                  </ul>
+                  <!-- <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button> -->
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm border-warning">
+                <div class="card-header py-3 text-bg-warning border-warning">
+                  <i class="fa-solid fa-cloud"></i>
+                  <h4 class="my-0 fw-normal">Humidity Info</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title"><span id="humidity"></span><small class="text-muted fw-light">%</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li class="my-4 text-center"><b>Humidity</b></span></li>
+                    <li>Cloud PCT is :<span id="cloud_pct"></span></li>
+                    <li>Feels like :<span id="feels_like"></span></li>
+                   
+                    
+                    
+                  </ul>
+                  <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button> -->
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm border-info">
+                <div class="card-header py-3 text-bg-info border-info">
+                  <i class="fa-solid fa-wind"></i>
+                  <h4 class="my-0 fw-normal">Wind Info</h4>
+                </div>
+                <div class="card-body">
+                  
+                  <h1 class="card-title pricing-card-title"><span id="wind_speed"></span><small class="text-muted fw-light">Km/Hr</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li class="my-4 text-center"><b>Wind Speed</b></span></li>
+                    <li>Wind Degrees is :<span id="wind_degrees"></span></li>
+                    <li>Sunrise is :<span id="sunrise"></span></li>
+                    
+                    <!-- <li>Sunset is :<span id="sunset"></span></li> -->
+                  </ul>
+
+
+
+                  <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="display-6 text-center mb-4">Weather of other common places</h2>
+          <div class="table-responsive">
+            <table class="table text-center">
+              <thead>
+                <tr>
+                  <th style="width: 22%;"></th>
+                  <th style="width: 22%;">Cloud_pct</th>
+                  <th style="width: 22%;">Feels_like</th>
+                  <th style="width: 22%;">Feels_like</th>
+                  <th style="width: 22%;">Humidity</th>
+                  <th style="width: 22%;">Max_temp</th>
+                  <th style="width: 22%;">Min_temp</th>
+                  <th style="width: 22%;">Sunrise</th>
+                  <th style="width: 22%;">Sunset</th>
+                  <th style="width: 22%;">Temp</th>
+                  <!-- <th style="width: 22%;">Wind_degrees</th>
+                  <th style="width: 22%;">Wind_speed</th> -->
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" class="text-start " >Shanghai</th>
+                  <td id="s0">-</td>
+                  <td id="s1">-</td>
+                  <td id="s2">-</td>
+                  <td id="s3">-</td>
+                  <td id="s4">-</td>
+                  <td id="s5">-</td>
+                  <td id="s6">-</td>
+                  <td id="s7">-</td>
+                  <td id="s8">-</td>
+            
+                  
+                </tr>
+                <tr>
+                  <th scope="row" class="text-start">Boston</th>
+                  <td class="bost">-</td>
+                  <td class="bost">-</td>
+                  <td class="bost">-</td>
+                  <td class="bost">-</td>
+                  <td class="bost">-</td>
+                  <td class="bost">-</td>
+                  <td class="bost">-</td>
+                  <td class="bost">-</td>
+                  <td class="bost">-</td>
+                </tr>
+              </tbody>
+      
+              <tbody>
+                <tr>
+                  <th scope="row" class="text-start">Lucknow</th>
+                  <td class="luck">-</td>
+                  <td class="luck">-</td>
+                  <td class="luck">-</td>
+                  <td class="luck">-</td>
+                  <td class="luck">-</td>
+                  <td class="luck">-</td>
+                  <td class="luck">-</td>
+                  <td class="luck">-</td>
+                  <td class="luck">-</td>
+                </tr>
+               
+                <tr>
+                  <th scope="row" class="text-start">Kolkata</th>
+                  <td class="kol">-</td>
+                  <td class="kol">-</td>
+                  <td class="kol">-</td>
+                  <td class="kol">-</td>
+                  <td class="kol">-</td>
+                  <td class="kol">-</td>
+                  <td class="kol">-</td>
+                  <td class="kol">-</td>
+                  <td class="kol">-</td>
+               
+                </tr>
+               
+              </tbody>
+            </table>
+          </div>
+      </div>
+      <script src="https://kit.fontawesome.com/f4ebd128eb.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="weather.js"></script>
+</body>
+</html>
