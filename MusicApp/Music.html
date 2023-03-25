@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="Music.css">
+</head>
+<body>
+   <h1>Music Player</h1> 
+   <div class="whole">
+   <div class="volumecontrol">
+      <input type="range" id="range" min="0" max="100" onchange=vol()>
+      <div class="mute"  onclick=mut()>
+        <img src="volumeOn.svg" id="volume" width="25px" height="25px">
+        <!-- <i class="fa-light fa-volume-off"></i> -->
+        <!-- <i class="fa-regular fa-volume-xmark yes"></i> -->
+        <!-- <i class="fa-duotone fa-volume-off"></i> -->
+      
+      </div>
+    </div>
+          
+<div class="music-container play">
+  
+
+   
+    <div class="music-info">
+        <h4 id="title">01-Tumhi Ho</h4>
+        <div class="progress-container">
+            <div class="progress"></div>
+        </div>
+    </div>
+
+        <audio src="01 - Tumhi Ho Bandhu.mp3" id="audio"></audio>
+
+        <div class="img-container">
+            <img src="BG.jpg" alt="no image" id="cover"/>
+        </div>
+
+        <div class="navigation">
+            <button id="prev" class="action-btn">
+                <i class="fas fa-backward"></i>
+            </button>
+            <button id="play" class="action-btn-big">
+                <i class="fas fa-play"></i>
+            </button>
+            <button id="next" class="action-btn">
+                <i class="fas fa-forward"></i>
+            </button>
+          
+        </div>
+    </div>
+</div>
+</div>
+
+   <script src="Music.js"></script>
+   <script src="https://kit.fontawesome.com/f4ebd128eb.js" crossorigin="anonymous"></script>
+</body>
+</html>
